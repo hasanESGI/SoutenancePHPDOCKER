@@ -3,7 +3,7 @@ apache:
   ports :
    - "8081:80"
   volumes:
-   - /Users/arey/dev/mysite/www:/var/www/html/
+   - /SoutenancePHPDOCKER/:/var/www/html
   links:
    - database
 phpmyadmin:
