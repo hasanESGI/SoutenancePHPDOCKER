@@ -5,7 +5,7 @@ services:
       image: php:apache
       container_name: apache
       ports :
-       - "8080:80"
+       - "8081:80"
       volumes:
        - ./:/var/www/html
       links:
@@ -14,7 +14,7 @@ services:
        image: phpmyadmin/phpmyadmin
        container_name: phpmyadmin
        ports :
-        - "81:80"
+        - "8082:80"
        environment:
         - MYSQL_USERNAME=root
         - MYSQL_PASSWORD=password
