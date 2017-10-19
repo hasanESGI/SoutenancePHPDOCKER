@@ -1,0 +1,28 @@
+version: "3.3"
+
+services:
+    apache:
+      image: php:apache
+      container_name: apache
+      ports :
+       - "8080:80"
+      volumes:
+       - ./:/var/www/html
+      links:
+       - database:db
+    phpmyadmin:
+       image: phpmyadmin/phpmyadmin
+       container_name: phpmyadmin
+       ports :
+        - "81:80"
+       environment:
+        - MYSQL_USERNAME=root
+        - MYSQL_PASSWORD=password
+       links:
+        - database:db
+    database:
+       image: mariadb
+       container_name: database  
+       environment:
+        - MYSQL_ROOT_PASSWORD=password
+        - MYSQL_DATABASE=soutenancePhp
